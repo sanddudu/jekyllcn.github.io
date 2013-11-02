@@ -1,33 +1,30 @@
 ---
 layout: docs
-title: Configuration
+title: 配置
 prev_section: structure
 next_section: frontmatter
 permalink: /docs/configuration/
 contributor: sanddudu
 ---
 
-Jekyll allows you to concoct your sites in any way you can dream up, and it’s
-thanks to the powerful and flexible configuration options that this is possible.
-These options can either be specified in a `_config.yml` file placed in your
-site’s root directory, or can be specified as flags for the `jekyll` executable
-in the terminal.
+得益于强大且灵活的配置选项，Jekyll 允许你使用任何你能想要的方式改造你的站点。这些
+选项可以指定在你站点的根目录下的 `_config.yml` 文件里，或者在终端执行 `jekyll` 时
+作为参数。
 
-## Configuration Settings
+## 配置设定
 
-### Global Configuration
+### 全局配置
 
-The table below lists the available settings for Jekyll, and the various <code
-class="option">options</code> (specified in the configuration file) and <code
-class="flag">flags</code> (specified on the command-line) that control them.
+下面的表格列出了可用的 Jekyll 设置，分别由 <code class="option">选项</code> (被指
+定在配置文件中) 和 <code class="flag">参数</code> (被指定在命令行中) 控制。
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Setting</th>
+      <th>设置</th>
       <th>
-        <span class="option">Options</span> and <span class="flag">Flags</span>
+        <span class="option">选项</span> 和 <span class="flag">参数</span>
       </th>
     </tr>
   </thead>
@@ -35,7 +32,7 @@ class="flag">flags</code> (specified on the command-line) that control them.
     <tr class='setting'>
       <td>
         <p class='name'><strong>Site Source</strong></p>
-        <p class='description'>Change the directory where Jekyll will read files</p>
+        <p class='description'>更换 Jekyll 读取文件的目录。</p>
       </td>
       <td class="align-center">
         <p><code class="option">source: DIR</code></p>
@@ -45,7 +42,7 @@ class="flag">flags</code> (specified on the command-line) that control them.
     <tr class='setting'>
       <td>
         <p class='name'><strong>Site Destination</strong></p>
-        <p class='description'>Change the directory where Jekyll will write files</p>
+        <p class='description'>更换 Jekyll 写入文件的目录。</p>
       </td>
       <td class="align-center">
         <p><code class="option">destination: DIR</code></p>
@@ -55,7 +52,7 @@ class="flag">flags</code> (specified on the command-line) that control them.
     <tr class='setting'>
       <td>
         <p class='name'><strong>Safe</strong></p>
-        <p class='description'>Disable <a href="../plugins/">custom plugins</a>.</p>
+        <p class='description'>关闭 <a href="../plugins/">自定义插件。</a>.</p>
       </td>
       <td class="align-center">
         <p><code class="option">safe: BOOL</code></p>
@@ -65,7 +62,7 @@ class="flag">flags</code> (specified on the command-line) that control them.
     <tr class='setting'>
       <td>
         <p class='name'><strong>Exclude</strong></p>
-        <p class="description">Exclude directories and/or files from the conversion</p>
+        <p class="description">在转换时被排除的目录和（或）文件。</p>
       </td>
       <td class='align-center'>
         <p><code class="option">exclude: [DIR, FILE, ...]</code></p>
@@ -75,9 +72,8 @@ class="flag">flags</code> (specified on the command-line) that control them.
       <td>
         <p class='name'><strong>Include</strong></p>
         <p class="description">
-          Force inclusion of directories and/or files in the conversion.
-          <code>.htaccess</code> is a good example since dotfiles are excluded
-          by default.
+          被强制转换的目录和（或）文件。<code>.htaccess</code> 是一个很好的例子因为以
+          "." 开头的文件是默认被排除的。
         </p>
       </td>
       <td class='align-center'>
@@ -88,12 +84,10 @@ class="flag">flags</code> (specified on the command-line) that control them.
       <td>
         <p class='name'><strong>Time Zone</strong></p>
         <p class="description">
-            Set the time zone for site generation. This sets the <code>TZ</code>
-            environment variable, which Ruby uses to handle time and date
-            creation and manipulation. Any entry from the
-            <a href="http://en.wikipedia.org/wiki/Tz_database">IANA Time Zone
-            Database</a> is valid, e.g. <code>America/New_York</code>. The default
-            is the local time zone, as set by your operating system.
+            设置站点生成的时区。这个设置将会更改 <code>TZ</code> 环境变量，Ruby使用
+            这个变量处理创建时间和日期的操作。输入 <a href="http://en.wikipedia.org/wiki/Tz_database">IANA 时区数据库</a> 
+            里的任意时区都是有效的，比如 <code>America/New_York</code> 。时区默认设置为
+            本地时间，即你的操作系统系统的时间。
         </p>
       </td>
       <td class='align-center'>
@@ -104,12 +98,10 @@ class="flag">flags</code> (specified on the command-line) that control them.
       <td>
         <p class='name'><strong>Encoding</strong></p>
         <p class="description">
-            Set the encoding of files by name. Only available for Ruby
-            1.9 or later).
-            The default value is nil, which use Ruby default,
-            <code>ASCII-8BIT</code>.
-            Available encoding for the ruby in use, can be shown by
-            command <code>ruby -e 'puts Encoding::list.join("\n")'</code>
+            设置文件编码的名称。（仅在Ruby 1.9或以后版本可用）
+            默认值为 nil ，使用Ruby默认的 <code>ASCII-8BIT</code> 编码。
+            可以通过执行 <code>ruby -e 'puts Encoding::list.join("\n")'</code> 来查看 Ruby 可用的
+            编码列表。
         </p>
       </td>
       <td class='align-center'>
@@ -120,21 +112,21 @@ class="flag">flags</code> (specified on the command-line) that control them.
 </table>
 </div>
 
-### Build Command Options
+### 构建命令选项
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Setting</th>
-      <th><span class="option">Options</span> and <span class="flag">Flags</span></th>
+      <th>设置</th>
+      <th><span class="option">选项</span> 和 <span class="flag">参数</span></th>
     </tr>
   </thead>
   <tbody>
     <tr class='setting'>
       <td>
         <p class='name'><strong>Regeneration</strong></p>
-        <p class='description'>Enable auto-regeneration of the site when files are modified.</p>
+        <p class='description'>开启当文件被更改时自动重新生成站点的功能。</p>
       </td>
       <td class="align-center">
         <p><code class="flag">-w, --watch</code></p>
@@ -143,7 +135,8 @@ class="flag">flags</code> (specified on the command-line) that control them.
     <tr class='setting'>
       <td>
         <p class='name'><strong>Configuration</strong></p>
-        <p class="description">Specify config files instead of using <code>_config.yml</code> automatically. Settings in later files override settings in earlier files.</p>
+        <p class="description">指定配置文件而不自动使用 <code>_config.yml</code> 。
+        后面指定的文件中的设定将会覆盖之前指定的文件的设定。</p>
       </td>
       <td class='align-center'>
         <p><code class="flag">--config FILE1[,FILE2,...]</code></p>
@@ -152,7 +145,7 @@ class="flag">flags</code> (specified on the command-line) that control them.
     <tr class='setting'>
       <td>
         <p class='name'><strong>Drafts</strong></p>
-        <p class="description">Process and render draft posts.</p>
+        <p class="description">处理且渲染草稿文章。</p>
       </td>
       <td class='align-center'>
         <p><code class="flag">--drafts</code></p>
@@ -161,7 +154,7 @@ class="flag">flags</code> (specified on the command-line) that control them.
     <tr class='setting'>
       <td>
         <p class='name'><strong>Future</strong></p>
-        <p class="description">Publish posts with a future date.</p>
+        <p class="description">使用一个未来的时间发布文章。</p>
       </td>
       <td class='align-center'>
         <p><code class="option">future: BOOL</code></p>
@@ -171,7 +164,7 @@ class="flag">flags</code> (specified on the command-line) that control them.
     <tr class='setting'>
       <td>
         <p class='name'><strong>LSI</strong></p>
-        <p class="description">Produce an index for related posts.</p>
+        <p class="description">生成相关文章的索引</p>
       </td>
       <td class='align-center'>
         <p><code class="option">lsi: BOOL</code></p>
@@ -181,7 +174,7 @@ class="flag">flags</code> (specified on the command-line) that control them.
     <tr class='setting'>
       <td>
         <p class='name'><strong>Limit Posts</strong></p>
-        <p class="description">Limit the number of posts to parse and publish.</p>
+        <p class="description">解析和发布文章的数量限制</p>
       </td>
       <td class='align-center'>
         <p><code class="option">limit_posts: NUM</code></p>
@@ -192,25 +185,23 @@ class="flag">flags</code> (specified on the command-line) that control them.
 </table>
 </div>
 
-### Serve Command Options
+### 服务命令选项
 
-In addition to the options below, the `serve` sub-command can accept any of the options
-for the `build` sub-command, which are then applied to the site build which occurs right
-before your site is served.
+除了下面的选项之外，`serve` 子命令可以接受任何执行于网站构建之前的 `build` 子命令的选项。
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Setting</th>
-      <th><span class="option">Options</span> and <span class="flag">Flags</span></th>
+      <th>设置</th>
+      <th><span class="option">选项</span> 和 <span class="flag">参数</span></th>
     </tr>
   </thead>
   <tbody>
     <tr class='setting'>
       <td>
         <p class='name'><strong>Local Server Port</strong></p>
-        <p class='description'>Listen on the given port.</p>
+        <p class='description'>在指定端口监听</p>
       </td>
       <td class="align-center">
         <p><code class="option">port: PORT</code></p>
@@ -220,7 +211,7 @@ before your site is served.
     <tr class='setting'>
       <td>
         <p class='name'><strong>Local Server Hostname</strong></p>
-        <p class='description'>Listen at the given hostname.</p>
+        <p class='description'>在指定主机名上监听</p>
       </td>
       <td class="align-center">
         <p><code class="option">host: HOSTNAME</code></p>
@@ -240,7 +231,7 @@ before your site is served.
     <tr class='setting'>
       <td>
         <p class='name'><strong>Detach</strong></p>
-        <p class='description'>Detach the server from the terminal</p>
+        <p class='description'>使服务脱离终端在后台运行。</p>
       </td>
       <td class="align-center">
         <p><code class="option">detach: BOOL</code></p>
@@ -252,25 +243,21 @@ before your site is served.
 </div>
 
 <div class="note warning">
-  <h5>Do not use tabs in configuration files</h5>
+  <h5>在配置文件中不要使用 Tab</h5>
   <p>
-    This will either lead to parsing errors, or Jekyll will revert to the
-    default settings. Use spaces instead.
+    这将导致解析错误，Jekyll 会使用默认设置。使用空格来代替 Tab。
   </p>
 </div>
 
-## Default Configuration
+## 默认配置
 
-Jekyll runs with the following configuration options by default. Unless
-alternative settings for these options are explicitly specified in the
-configuration file or on the command-line, Jekyll will run using these options.
+Jekyll 将默认使用以下的配置运行。除非替代的设置指定在配置文件或命令行里。
 
 <div class="note warning">
-  <h5>There are two unsupported kramdown options</h5>
+  <h5>有两个 kramdown 选项不被支持</h5>
   <p>
-    Please note that both <code>remove_block_html_tags</code> and
-    <code>remove_span_html_tags</code> are currently unsupported in Jekyll due to the
-    fact that they are not included within the kramdown HTML converter.
+    由于 kramdown HTML 转换器中并不包含 <code>remove_block_html_tags</code> 和 <code>remove_span_html_tags</code> ，
+    Jekyll 将不支持这两个选项。
   </p>
 </div>
 
@@ -344,17 +331,17 @@ redcloth:
 {% endhighlight %}
 
 
-## Markdown Options
+## Markdown 选项
 
-The various Markdown renderers supported by Jekyll sometimes have extra options available.
+被 Jekyll 支持的 Markdown 渲染器有他们可用的额外选项。
 
 ### Redcarpet
 
-Redcarpet can be configured by providing an `extensions` sub-setting, whose value should be an array of strings. Each string should be the name of one of the `Redcarpet::Markdown` class's extensions; if present in the array, it will set the corresponding extension to `true`.
+Redcarpet 可以通过给定一个 `extensions` 副设置进行配置, 它的值应该是一个字符串数组。每个字符串都应该被命名为 `Redcarpet::Markdown` 类的扩展；如果出现在数组中，相应的扩展将被设为 `true`。
 
-Jekyll handles two special Redcarpet extensions:
+Jekyll 处理两个特别的 Redcarpet 扩展:
 
-- `no_fenced_code_blocks` --- By default, Jekyll sets the `fenced_code_blocks` extension (for delimiting code blocks with triple tildes or triple backticks) to `true`, probably because GitHub's eager adoption of them is starting to make them inescapable. Redcarpet's normal `fenced_code_blocks` extension is inert when used with Jekyll; instead, you can use this inverted version of the extension for disabling fenced code.
+- `no_fenced_code_blocks` --- Jekyll 默认将 `fenced_code_blocks` 扩展 （用来分割由三个波浪线和三个反向引号组成的代码块）设为 `true`，probably because GitHub's eager adoption of them is starting to make them inescapable. Redcarpet's normal `fenced_code_blocks` extension is inert when used with Jekyll; instead, you can use this inverted version of the extension for disabling fenced code.
 
     Note that you can also specify a language for highlighting after the first delimiter:
 
